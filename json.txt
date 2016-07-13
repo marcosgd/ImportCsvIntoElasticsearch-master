@@ -1,0 +1,31 @@
+GET /_cat/indices/kpis?v
+GET /kpis/_mapping/kpi?v
+DELETE /kpis/_mapping/kpi
+
+PUT kpis 
+{
+  "mappings": {
+    "kpi": {
+      "_all":       { "enabled": false  },
+      "date_detection": { 
+        "enabled": false
+      },
+      "properties": { 
+        "idevent":                { "type": "string"   },  17/03/2016 11:47:11
+        "initdate":             { "type": "date","format":"DD/MM/YYYY HH:mm:ss"  }, 
+        "sys_namet":              { "type": "string","index" : "not_analyzed"  },
+        "op_namet":              { "type": "string" ,"index" : "not_analyzed" },
+        "opt_namet":              { "type": "string","index" : "not_analyzed"  },
+        "sender":                  { "type": "string","index" : "not_analyzed"  },
+        "length":                  { "type": "integer" },
+        "username":              { "type": "string" ,"index" : "not_analyzed" },
+        "tc_namet":              { "type": "string","index" : "not_analyzed"  },
+        "state":                  { "type": "string","index" : "not_analyzed"  },
+        "functionalerror":     	 	{ "type": "string"  },
+        "mastersystemerror":    	{ "type": "string"  },
+        "mdwerror":                 { "type": "string"  }
+      }
+ }
+}
+}
+
